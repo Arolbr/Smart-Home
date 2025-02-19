@@ -1,0 +1,218 @@
+/* 全局设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #81D8D0, #FFFFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 登录容器样式 */
+.login-container {
+    width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"], select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* 输入框和按钮聚焦效果 */
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #81D8D0;
+}
+
+/* 登录按钮样式 */
+button {
+    background-color: #4CAF50; /* 绿色按钮 */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* 忘记密码和后端管理链接 */
+a {
+    color: #81D8D0;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 后端管理模态窗口样式 */
+.modal {
+    display: none; /* 初始隐藏 */
+    position: fixed;
+    z-index: 1; /* 确保模态窗口在最上面 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 背景透明 */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#admin-login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#admin-login-form input,
+#admin-login-form select,
+#admin-login-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* 后端管理登录按钮 */
+#admin-login-submit {
+    background-color: #81D8D0;
+    color: white;
+    cursor: pointer;
+}
+
+#admin-login-submit:hover {
+    background-color: #68b6b1;
+    transform: scale(1.05);
+}
+
+/* 调整一些细节，确保内容居中 */
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], select {
+    font-size: 16px;
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container, .modal-content {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* 响应式设计：当屏幕宽度小于768px时，调整布局 */
+@media (max-width: 768px) {
+    /* 调整登录容器宽度 */
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* 调整登录标题字体大小 */
+    .login-container h1 {
+        font-size: 24px;
+    }
+
+    /* 调整输入框和按钮的字体大小 */
+    input[type="text"], input[type="password"], select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* 后端管理登录模态窗口宽度 */
+    .modal-content {
+        width: 80%;
+        margin: 30% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 对更小屏幕（手机端）的调整 */
+    .login-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .login-container h1 {
+        font-size: 20px;
+    }
+
+    /* 调整输入框和按钮的字体大小 */
+    input[type="text"], input[type="password"], select, button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 40% auto;
+    }
+}

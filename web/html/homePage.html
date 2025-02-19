@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/homePage.css">
+</head>
+<body>
+<div class="div1">
+    <header class="head">
+        <div class="head-div1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16" id="home-icon">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+            </svg>
+            <select id="home-select">
+                <option value="1">天天贩卖开心的家</option>
+            </select>
+        </div>
+        <img src="../images/message.svg" id="messages">
+    </header>
+
+    <div class="div2">
+        <div class="head-div3">
+            <div class="div2-1">
+                当前城市：<span id="city"></span><br>
+                天气/空气情况: <span id="weather"></span><br>
+                气温：<span id="air_temperature"></span>
+            </div>
+            <div class="div2-2">
+                室内温度：<span id="indoor-temperature"></span>℃
+            </div>
+        </div>
+    </div>
+
+    <div class="div3">
+        <div class="room-selector">
+            <button class="room-btn" id="room-all">全屋</button>
+            <button class="room-btn" id="room-master">主卧</button>
+            <button class="room-btn" id="room-living">客厅</button>
+            <button class="room-btn" id="room-kitchen">厨房</button>
+            <button class="room-btn" id="room-bathroom">厕所</button>
+        </div>
+
+        <div class="furniture-container"></div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=a61fedfdc0f0feef8f2d86a28821e035"></script>
+<script src="../js/homePage.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* 基础样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #81D8D0, #FFFFFF);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.div1 {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Header 样式 */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.head-div1 {
+    display: flex;
+    align-items: center;
+}
+
+.head select {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#messages {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    order: 1;
+}
+
+/* 主要内容部分 */
+.div2 {
+    padding: 20px 0;
+}
+
+.head-div3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div2-1, .div2-2 {
+    font-size: 16px;
+    color: #333;
+}
+
+.div2-1 span, .div2-2 span {
+    font-weight: bold;
+}
+
+.div3 {
+    padding: 20px 0;
+}
+
+.room-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+}
+
+.room-btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.room-btn:hover {
+    background-color: #ffffff;
+}
+
+.furniture-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.furniture-item {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.furniture-img {
+    position: relative;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.furniture-img img {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.furniture-switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.furniture-switch:hover {
+    background-color: #ffffff;
+}
+
+.furniture-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 媒体查询（适配手机端） */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .head-div1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #home-icon{
+        margin-left: 1px;
+        display: inline;
+    }
+
+    #home-select{
+        margin-left: 20px;
+        display: inline;
+    }
+
+    #messages {
+        order: 2;
+        margin-left: 90%;
+        display: inline;
+    }
+
+    .room-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .room-btn {
+        width: 100%;
+    }
+
+    .furniture-item {
+        width: 48%;
+    }
+
+    .furniture-container {
+        flex-direction: column;
+        margin-left: 150px;
+    }
+}

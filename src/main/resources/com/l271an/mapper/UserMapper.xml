@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.l271an.mapper.UserMapper">
+    <select id="getAllUsers" resultType="com.l271an.entity.Users">
+        SELECT * FROM users;
+    </select>
+    <select id="userLogin" resultType="com.l271an.entity.Users">
+        SELECT * FROM users WHERE username=#{params.username} AND password=#{params.password};
+    </select>
+    <select id="administratorLogin" resultType="com.l271an.entity.Users">
+        SELECT *
+        FROM users
+        WHERE username = #{params.username}
+        AND password = #{params.password}
+        AND (
+        ('SuperAdministrator' = #{params.permission} AND permission = 'SuperAdministrator')
+        OR
+        ('Administrator' = #{params.permission} AND permission IN ('SuperAdministrator', 'Administrator'))
+        );
+    </select>
+    <insert id="addUser">
+        INSERT INTO users (username, password, permission) VALUES (#{params.username}, #{params.password}, #{params.permission})
+    </insert>
+    <delete id="deleteUser">
+        DELETE FROM users WHERE id=#{params.id}
+    </delete>
+    <update id="updateUser">
+        UPDATE users SET username=#{params.username}, password=#{params.password}, permission=#{params.permission} WHERE id=#{params.id}
+    </update>
+</mapper>

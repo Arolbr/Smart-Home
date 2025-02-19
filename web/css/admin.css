@@ -1,0 +1,309 @@
+/* 基础全局样式 */
+body {
+    position: fixed;
+    width: 1000px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #deac62;
+}
+
+/* 按钮样式 */
+.btn {
+    background-color: #573503; /* 深绿色 */
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* 悬停状态 */
+.btn:hover {
+    background-color: #deac62; /* 金色 */
+    transform: scale(1.05); /* 按钮放大效果 */
+}
+
+/* 按下状态 */
+.btn:active {
+    background-color: #eab85e; /* 更深的绿色 */
+    transform: scale(0.95); /* 按钮缩小效果 */
+}
+
+/* 聚焦状态 */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.5); /* 聚焦框 */
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    color: #573503;
+    padding-top: 20px;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+/* 主内容区样式 */
+.main-content {
+    width: 1000px;
+    margin-left: 250px;
+    padding: 0;
+}
+
+/* 菜单标题 */
+.nav-header {
+    left: 1em;
+    text-align: left;
+    margin: 0px;
+    padding-left: 15px;
+    border: 1px solid #ffffff;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #0016ff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 悬停时标题颜色变化 */
+.nav-header:hover {
+    background-color: #deac62;
+}
+
+/* 子菜单样式 */
+ul ul {
+    display: none;
+    padding-left: 20px;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* 列表项样式 */
+li {
+    text-indent: 2em;
+    text-align: left;
+    margin-top: 5px;
+    list-style-type: none;
+    line-height: 30px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    color: #573503;
+    transition: background-color 0.3s;
+}
+
+/* 悬停状态 */
+li:hover {
+    background-color: #deac62;
+    color: #ffffff;
+}
+
+/* 动态效果：菜单展开/收缩 */
+.sidebar .nav-header.active + ul {
+    display: block;
+    max-height: 500px;
+}
+
+/* 侧边栏小屏幕隐藏效果 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+/* 导航栏样式 */
+.navbar {
+    padding: 1rem;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+#username-display {
+    color: #fff;
+    font-size: 16px;
+}
+
+#user-info-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    background-color: #ffffff;
+    padding: 0;
+}
+
+/* 表格样式 */
+#data-table-container {
+    max-width: 2500px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+th span {
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+}
+
+/* 表格行交替背景色 */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* 表格单元格的文字样式 */
+td {
+    color: #555;
+    font-size: 15px;
+}
+
+td:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* 动态填充内容的设备列 */
+#device1, #device2, #device3, #device4, #device5 {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* 模态窗口样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 模态框内容样式 */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 表格和分页 */
+.table {
+    margin-top: 20px;
+}
+
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination .page-link {
+    color: #007bff;
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px 12px;
+    }
+
+    .btn {
+        padding: 6px 15px;
+    }
+}
+
+.container-fluid {
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+.data-td {
+    width: 150px;
+}

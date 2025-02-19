@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<div class="login-container">
+    <h1>登录</h1>
+    <form>
+        <input type="text" id="username" placeholder="用户名" required>
+        <input type="password" id="password" placeholder="密码" required>
+        <button id="login">登录</button>
+    </form>
+    <a href="#">忘记密码</a>
+    <a href="#" id="admin-login-btn">后端管理</a> <!-- 点击后弹出模态窗口 -->
+</div>
+
+<!-- 后端管理登录模态窗口 -->
+<div id="admin-login-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2>后端管理登录</h2>
+        <form id="admin-login-form">
+            <input type="text" id="admin-username" placeholder="管理员用户名" required>
+            <input type="password" id="admin-password" placeholder="管理员密码" required>
+
+            <!-- 权限选择下拉框 -->
+            <label for="admin-permission">选择权限：</label>
+            <select id="admin-permission" required>
+                <option value="SuperAdministrator">超级管理员</option>
+                <option value="Administrator">普通管理员</option>
+            </select>
+
+            <button type="submit" id="admin-login-submit">登录</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>
