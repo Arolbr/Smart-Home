@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.l271an.mapper.ApplicationMapper">
+    <select id="getApplications" resultType="com.l271an.entity.Applications">
+        select * from apply
+    </select>
+    <insert id="addApplication">
+        insert into apply (user, status, time, content) values (#{param.user}, #{param.status}, #{param.time}, #{param.content})
+    </insert>
+    <update id="updateApplicationStatus">
+        update application set status = #{param.status} where id=#{param.id}
+    </update>
+    <select id="getApplicationByUserId" resultType="com.l271an.entity.Applications">
+        select * from apply where user=#{param.user}
+    </select>
+    <delete id="deleteApplication">
+        delete from apply where id=#{param.id}
+    </delete>
+</mapper>
