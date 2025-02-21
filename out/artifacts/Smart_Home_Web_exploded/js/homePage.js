@@ -21,11 +21,6 @@ $(() => {
         openOrCloseDevice(username, password, token, permission, ip, id);
     });
 
-    // 点击消息图标时跳转通知页面
-    $('#messages').on('click', function() {
-        window.location="../html/notice.html";
-    });
-
     // 获取城市后获取天气
     getCity(username,password,token);
 

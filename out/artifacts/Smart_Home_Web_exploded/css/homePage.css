@@ -188,3 +188,64 @@ body {
         margin-left: 150px;
     }
 }
+
+/* 右侧抽屉样式 */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* 默认状态，抽屉在右侧外面 */
+    z-index: 1000;
+}
+
+.drawer-enter-active, .drawer-leave-active {
+    transition: transform 0.3s ease;
+}
+
+.drawer-enter, .drawer-leave-to {
+    transform: translateX(100%); /* 进入和离开时都设置为右侧外面 */
+}
+
+.drawer-enter-to {
+    transform: translateX(0); /* 打开时抽屉进入视口 */
+}
+
+/* 抽屉头部 */
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+}
+
+.drawer-header h2 {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 抽屉内容 */
+.drawer-content {
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 消息图标 */
+#messages {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
