@@ -2,6 +2,7 @@ package com.l271an.controller;
 
 import com.l271an.entity.Devices;
 import com.l271an.entity.Result;
+import com.l271an.exception.DeviceException;
 import com.l271an.service.DeviceService;
 import com.l271an.service.impl.DeviceServiceImpl;
 import com.l271an.utils.JsonUtils;
@@ -20,7 +21,7 @@ import java.util.Map;
 @WebServlet("/intercept/getAllDevices")
 public class GetAllDevicesController extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         DeviceService device = new DeviceServiceImpl();

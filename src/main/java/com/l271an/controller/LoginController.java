@@ -26,6 +26,7 @@ public class LoginController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        System.out.println("登录操作：" + username);
         UsersService user = new UsersServiceImpl();
         Map<String,Object> map = new HashMap<>();
         map.put("username", username);

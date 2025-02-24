@@ -24,8 +24,6 @@ public class ApplicationProcessingController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         String username = req.getParameter("username");
-        String applicationContent = req.getParameter("applicationContent");
-        String applicationStatus = req.getParameter("applicationStatus");
         String applicationId = req.getParameter("applicationId");
         String applicationOperate = req.getParameter("applicationOperate");
         ApplicationService app = new ApplicationServiceImpl();

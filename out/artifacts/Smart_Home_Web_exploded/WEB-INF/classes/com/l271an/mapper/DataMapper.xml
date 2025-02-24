@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.l271an.mapper.DataMapper">
+    <select id="getData" resultType="com.l271an.entity.Data">
+        select * from datas
+    </select>
+    <insert id="insertData">
+        insert into datas (device, type, value, time) values (#{param.device}, #{param.type}, #{param.value}, #{param.time})
+    </insert>
+    <update id="updateData">
+        update datas set device = #{param.device}, type = #{param.type}, value = #{param.value}, time = #{param.time} where id = #{param.id}
+    </update>
+    <delete id="deleteData">
+         delete from datas where id = #{param.id}
+    </delete>
+</mapper>
